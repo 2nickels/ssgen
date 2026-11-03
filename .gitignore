@@ -1,1 +1,4 @@
 __pycache__/
+src/test_delimiter.py
+src/test_htmlnode.py
+src/test_textnode.py
