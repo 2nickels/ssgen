@@ -21,7 +21,7 @@ class TextNode:
         return bool(isinstance(other, TextNode) and self.value == other.value and self.text_type == other.text_type and self.url == other.url)
 
     def __repr__(self) -> str:
-        return f"{TextNode(self.value, self.text_type, self.url)}"
+        return f"TextNode({self.value}, {self.text_type}, {self.url})"
 
 def text_node_to_html_node(text_node: TextNode) -> LeafNode:
     match text_node.text_type:
