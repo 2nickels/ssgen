@@ -39,6 +39,8 @@ def split_nodes_image(old_nodes: list[TextNode]) -> list[TextNode]:
         text = node.value
         for _, value in enumerate(link):
             split = text.split(f"![{value[0]}]({value[1]})", 1)
+            if len(split) != 2:
+                raise ValueError("Invalid markdown, image section not closed")
             if len(split[0]) > 0:
                 new_nodes.append(TextNode(split[0], TextType.TEXT))
             new_nodes.append(TextNode(value[0],TextType.IMAGE, value[1]))
@@ -62,6 +64,8 @@ def split_nodes_link(old_nodes: list[TextNode]) -> list[TextNode]:
         text = node.value
         for _, value in enumerate(link):
             split = text.split(f"[{value[0]}]({value[1]})", 1)
+            if len(split) != 2:
+                raise ValueError("Invalid markdown, link section not closed")
             if len(split[0]) > 0:
                 new_nodes.append(TextNode(split[0], TextType.TEXT))
             new_nodes.append(TextNode(value[0],TextType.LINK, value[1]))
