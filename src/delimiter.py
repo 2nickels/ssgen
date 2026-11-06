@@ -73,10 +73,3 @@ def split_nodes_link(old_nodes: list[TextNode]) -> list[TextNode]:
         if len(text) > 0:
             new_nodes.append(TextNode(text, TextType.TEXT))
     return new_nodes
-
-def markdown_to_blocks(text: str):
-    lines = []
-    linebreak = text.split("\n\n")
-    for s in linebreak:
-        lines.append(s.strip())
-    return lines

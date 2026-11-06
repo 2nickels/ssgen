@@ -5,3 +5,4 @@ src/test_textnode.py
 src/test_linkgrabber.py
 src/test_string_to_markdown.py
 src/test_string_to_text_node.py
+src/test_block.py
