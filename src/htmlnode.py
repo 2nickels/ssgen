@@ -40,7 +40,7 @@ class LeafNode(HtmlNode):
         return f"<{self.tag}{self.props_to_html()}>{self.value}</{self.tag}>"
 
     def __repr__(self) -> str:
-        return f"Tag: {self.tag} | Value: {self.value} | Props: {self.props}"
+        return f"LeafNode({self.tag},{self.value},{self.props})"
 
 class ParentNode(HtmlNode):
     def __init__(self, tag: str, children: list[HtmlNode], props: dict[str, str] | None = None):
